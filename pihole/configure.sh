@@ -11,7 +11,7 @@ else
 fi
 
 # Extract the value from the YAML file
-BLOCK_ICLOUD_PR=$(yq eval '.FTL-CONFIGS.BLOCK_ICLOUD_PR' ./pihole/pihole-config.yml)
+BLOCK_ICLOUD_PR=$(yq eval '.FTL-CONFIGS.BLOCK_ICLOUD_PR' ./pihole/pihole-config.yaml)
 
 # Check if the configuration exists in the file
 if grep -q "^BLOCK_ICLOUD_PR=" /etc/pihole/pihole-FTL.conf; then
