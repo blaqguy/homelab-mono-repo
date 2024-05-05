@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# Install yq
+if [ -z "$(command -v yq)" ]; then
+  echo "yq is not installed. Installing"
+  wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_arm64 -O /usr/bin/yq &&\
+    chmod +x /usr/bin/yq
+  chmod 777 /usr/bin/yq
+else
+  echo "yq is installed"
+fi
+
 # Extract the value from the YAML file
 BLOCK_ICLOUD_PR=$(yq eval '.FTL-CONFIGS.BLOCK_ICLOUD_PR' ./pihole/pihole-config.yml)
 
