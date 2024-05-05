@@ -1,0 +1,16 @@
+name: deploy-pihole
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'pihole/**'
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run install script
+        run: |
+          sudo bash ./pihole/pihole.sh
