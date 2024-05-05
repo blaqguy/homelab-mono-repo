@@ -1,3 +1,2 @@
-FTL-Configs:
-  # Can be true or false
-  BLOCK_ICLOUD_PR=false
+FTL-CONFIGS:
+  BLOCK_ICLOUD_PR: false
