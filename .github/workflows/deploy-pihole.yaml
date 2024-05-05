@@ -14,3 +14,4 @@ jobs:
       - name: Run install script
         run: |
           sudo bash ./pihole/pihole.sh
+          
