@@ -8,10 +8,6 @@ resource "proxmox_vm_qemu" "k8s-master" {
   cores       = 2
   sockets     = 1
   memory      = 4096
-  network {
-    bridge = "vmbr0"
-    model  = "virtio"
-  }
   disk {
     size    = "30G"
     storage = "local-lvm"
