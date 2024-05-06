@@ -5,16 +5,10 @@ on:
       - main
     paths:
       - 'terraform/**'
-
-env:
-  TF_CLOUD_ORGANIZATION: "emeka-homelab"
-  TF_API_TOKEN: ${{ secrets.TF_CLOUD_API_TOKEN }}
-  TF_WORKSPACE: "default"
-  CONFIG_DIRECTORY: "./"
       
 jobs:
   plan:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
