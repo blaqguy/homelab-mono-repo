@@ -7,3 +7,13 @@ terraform {
 }
 
 provider "proxmox" {}
+
+terraform {
+  cloud {
+    organization = "emeka-homelab"
+
+    workspaces {
+      name = "default"
+    }
+  }
+}
