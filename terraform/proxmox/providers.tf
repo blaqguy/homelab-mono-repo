@@ -4,16 +4,13 @@ terraform {
       source = "telmate/proxmox"
     }
   }
-}
-
-provider "proxmox" {}
-
-terraform {
   cloud {
     organization = "emeka-homelab"
 
     workspaces {
       name = "default"
     }
-  }
+  }  
 }
+
+provider "proxmox" {}
