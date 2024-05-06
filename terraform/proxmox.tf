@@ -16,4 +16,6 @@ resource "proxmox_virtual_environment_vm" "k8s-master" {
     interface    = "scsi0"
     size         = 30
   }
+  efi_disk  = "local-lvm"
+  node_name = "hp-server01"
 }
