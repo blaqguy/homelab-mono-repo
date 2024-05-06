@@ -16,6 +16,9 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           cli_config_credentials_token: ${{ secrets.TF_CLOUD_API_TOKEN }}
-      - name: Terraform plan
-        run: |
-          bash ./scripts/deploy.sh 
+      - name: Terraform Init
+        run: terraform init -input=false
+      - name: Terraform Plan
+        run: terraform plan -input=false
+      - name: Terraform Apply
+        run: terraform apply -auto-approve -input=false
