@@ -16,8 +16,6 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           cli_config_credentials_token: ${{ secrets.TF_CLOUD_API_TOKEN }}
-      - name: print working directory
-        run: pwd
       - name: Terraform plan
         run: |
-          bash ./plan.sh 
+          bash ./scripts/plan.sh 
