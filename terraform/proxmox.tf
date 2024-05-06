@@ -1,4 +1,4 @@
-resource "proxmox_vm_qemu" "resource-name" {
+resource "proxmox_vm_qemu" "k8s-master" {
   name        = "k8s-master"
   desc        = "Kubernetes Master"
   vmid        = 100
