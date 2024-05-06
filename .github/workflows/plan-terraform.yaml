@@ -1,0 +1,21 @@
+name: plan-terraform
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'terraform/**'
+      
+jobs:
+  plan:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          cli_config_credentials_token: ${{ secrets.TF_CLOUD_API_TOKEN }}
+      - name: Terraform plan
+        run: |
+          bash ./scripts/plan.sh 
